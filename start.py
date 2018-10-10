@@ -26,17 +26,17 @@ async def QuiEstTonMaitre():
 
 @bot.command()
 async def add(left : float, right : float):
-    """Adds two numbers together."""
+    """Ajoute deux nombres ensemble."""
     await bot.say(left + right)
 
 @bot.command(name='LeSac',
-                description="Answers a yes/no question.",
+                description="Réponds à une question par des choses ( ͡° ͜ʖ ͡° ).",
                 brief="Répond à tes questions.",
                 aliases=['eight_ball', 'eightball', '8-ball'],
                 pass_context=True)
 async def LeSac(context):
     possible_responses = [
-        "C' est un non retentissant",
+        "C'est un non retentissant",
         'Cela semble peu probable',
         'Difficile à dire',
         'Probable',
@@ -59,14 +59,14 @@ async def bitcoin():
 @bot.command()
 async def Maxssio():
     """*Hommage à Maxssio partit trop tot*"""
-    await bot.say("YOUHOU MAX C'est TOI ?!  *dit Polo*. "
-                  " *Tout le monde eu entendu et Max se fit arreté.*"
-                  " Il finira sa vie en prison, pour avoir espioné des cailloux."
-                  " La Légende raconte que Max se mit à parler latin car en prison, il était devenu 'tou édgi 4 u'")
+    await bot.say("YOUHOU MAX, c'est TOI ?! *dit Polo*. "
+                  " Tout le monde eut entendu et Max se fit arreter."
+                  " Il finira sa vie en prison, pour avoir espionné des cailloux."
+                  " La Légende raconte que Max se mit à parler latin en prison, il était devenu 'tou édgi 4 u'")
     
 @bot.command()
 async def ぴんがす():
-    """Jamais Malade"""
+    """A jamais malade"""
     await bot.say("Ah, bah il est pas là ¯\_(ツ)_/¯ ")
                  
 bot.run(TOKEN)        
