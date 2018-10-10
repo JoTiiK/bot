@@ -7,7 +7,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 from pprint import pprint
 
-TOKEN = 'NDk4NTE2NzgyNDM3MzY3ODA4.Dpu7Sw.32WghRpnKqbRIJFEX_qDJcdju7I'
+TOKEN = ''
 
 description = '''Bot de merde'''
 bot = commands.Bot(command_prefix='#',description=description)
