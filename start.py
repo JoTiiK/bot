@@ -19,7 +19,8 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-@bot.command()
+@bot.command(name='QuiEstTonMaitre',
+                aliases=['quiesttonmaitre', 'whosurmaster', 'tonmaitre', 'QuiEstLePlusBeau', 'quiestleplusbeau'])
 async def QuiEstTonMaitre():
     """Le soumis"""
     await bot.say("Vous, Maitre")
