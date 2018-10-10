@@ -25,6 +25,12 @@ async def QuiEstTonMaitre():
     """Le soumis"""
     await bot.say("Vous, Maitre")
 
+@bot.command(name='Bowsette',
+                aliases=['bowsette', 'bgette', 'Bgette', 'Désirée', 'désirée', 'desiree', 'Desiree'])
+async def Bowsette():
+    """Bowsette la bgette"""
+    await bot.say("https://media.giphy.com/media/5n7rMuIpPJk4wvrzUv/giphy.gif")
+
 @bot.command()
 async def add(left : float, right : float):
     """Ajoute deux nombres ensemble."""
