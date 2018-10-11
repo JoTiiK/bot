@@ -8,7 +8,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 from pprint import pprint
 
-TOKEN = ''
+TOKEN = 'NDk4NTE2NzgyNDM3MzY3ODA4.DqD9hQ.h93u2vMq_slMg05X0t-WoI2jbO0'
 
 description = '''Bot de merde'''
 bot = commands.Bot(command_prefix='#',description=description)
@@ -55,8 +55,8 @@ async def LeSac(context):
     await bot.say(random.choice(possible_responses) + ", " + context.message.author.mention)
 
 @bot.command(name='bitcoin',
-                aliases=['btc']
-                description="Donne le prix du bitcoin",)
+                aliases=['btc'],)
+            
 async def bitcoin():
     url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
     async with aiohttp.ClientSession() as session:  # Async HTTP request
@@ -77,6 +77,28 @@ async def Maxssio():
 async def ぴんがす():
     """A jamais malade"""
     await bot.say("Ah, bah il est pas là ¯\_(ツ)_/¯ ")
+    
+@bot.command(name='Dé',
+                description="Lance un dé à 6 faces.",
+                brief="Lance un dé.",
+                aliases=['LeDé', 'dé'],
+                pass_context=True)
+async def Dé(context):
+    possible_responses = [
+        "1",
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        'Le dé est tombé par terre',
+    ]
+    await bot.say(random.choice(possible_responses) + ", " + context.message.author.mention)
+    
+@bot.command()
+async def fois(left : float, right : float):
+    """Multiplie deux nombres ensembles."""
+    await bot.say(left * right)
                  
 bot.run(TOKEN)        
 
