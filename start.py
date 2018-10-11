@@ -49,7 +49,7 @@ async def LeSac(context):
         'Probable',
         'Définitivement',
         'AYAAA non.',
-        'Demande à Anto,
+        'Demande à Anto',
     ]
     await bot.say(random.choice(possible_responses) + ", " + context.message.author.mention)
 
