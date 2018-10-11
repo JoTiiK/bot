@@ -30,7 +30,7 @@ async def QuiEstTonMaitre():
                 aliases=['bowsette', 'bgette', 'Bgette', 'Désirée', 'désirée', 'desiree', 'Desiree'])
 async def Bowsette():
     """Bowsette la bgette"""
-    await bot.say("https://media.giphy.com/media/5n7rMuIpPJk4wvrzUv/giphy.gif")
+    await bot.say("Bowsette la bgette ! https://media.giphy.com/media/5n7rMuIpPJk4wvrzUv/giphy.gif")
 
 @bot.command()
 async def add(left : float, right : float):
@@ -81,7 +81,7 @@ async def ぴんがす():
 @bot.command(name='Dé',
                 description="Lance un dé à 6 faces.",
                 brief="Lance un dé.",
-                aliases=['LeDé', 'dé'],
+                aliases=['LeDé', 'dé', 'de', 'De'],
                 pass_context=True)
 async def Dé(context):
     possible_responses = [
