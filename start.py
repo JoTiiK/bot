@@ -55,7 +55,7 @@ async def LeSac(context):
     await bot.say(random.choice(possible_responses) + ", " + context.message.author.mention)
 
 @bot.command(name='bitcoin',
-                aliases=['btc'
+                aliases=['btc']
                 description="Donne le prix du bitcoin",)
 async def bitcoin():
     url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
