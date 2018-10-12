@@ -26,11 +26,6 @@ async def QuiEstTonMaitre():
     """Le soumis"""
     await bot.say("Vous, Maitre")
 
-@bot.command(name='Bite',
-                aliases=['bite', 'dick, 'Dick'])
-async def Bite():
-    """Jean-Michel Pervers"""
-    await bot.say("A toi qui a utilisé cette commande, tu es un pervers. ( ͡° ͜ʖ ͡° )")
 
 @bot.command(name='Bowsette',
                 aliases=['bowsette', 'bgette', 'Bgette', 'Désirée', 'désirée', 'desiree', 'Desiree'])
