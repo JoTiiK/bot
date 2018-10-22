@@ -119,5 +119,14 @@ async def say(ctx, *args):
     await bot.delete_message(ctx.message)
     return await bot.say(mesg)
 
+def user_is_issuisse(ctx):
+    return ctx.message.author.id == "385318295068213258" 
+
+@bot.command(pass_context = True)
+@commands.check(user_is_issuisse)
+async def aya():
+    mesg = 'http://image.noelshack.com/fichiers/2016/42/1477217760-epicjesus.gif '
+    return await bot.say(mesg)
+
                  
 bot.run(TOKEN)        
