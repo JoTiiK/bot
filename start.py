@@ -8,13 +8,15 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 from pprint import pprint
 
-TOKEN = 'NDk4NTE2NzgyNDM3MzY3ODA4.DqD9hQ.h93u2vMq_slMg05X0t-WoI2jbO0'
+TOKEN = 'NDk4NTE2NzgyNDM3MzY3ODA4.DqFGVg.hue467MO0Y_1_4wDpgzQeV0edSE'
 
 description = '''Bot de merde'''
 bot = commands.Bot(command_prefix='#',description=description)
 
+
 @bot.event
 async def on_ready():
+    await bot.change_presence(game=discord.Game(name='vec mes nerfs'))
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
@@ -26,12 +28,11 @@ async def QuiEstTonMaitre():
     """Le soumis"""
     await bot.say("Vous, Maitre")
 
-
 @bot.command(name='Bowsette',
                 aliases=['bowsette', 'bgette', 'Bgette', 'Désirée', 'désirée', 'desiree', 'Desiree'])
 async def Bowsette():
     """Bowsette la bgette"""
-    await bot.say("Bowsette la bgette ! https://media.giphy.com/media/5n7rMuIpPJk4wvrzUv/giphy.gif")
+    await bot.say("https://media.giphy.com/media/5n7rMuIpPJk4wvrzUv/giphy.gif")
 
 @bot.command()
 async def add(left : float, right : float):
@@ -82,7 +83,7 @@ async def ぴんがす():
 @bot.command(name='Dé',
                 description="Lance un dé à 6 faces.",
                 brief="Lance un dé.",
-                aliases=['LeDé', 'dé', 'de', 'De'],
+                aliases=['LeDé', 'dé'],
                 pass_context=True)
 async def Dé(context):
     possible_responses = [
@@ -100,6 +101,23 @@ async def Dé(context):
 async def fois(left : float, right : float):
     """Multiplie deux nombres ensembles."""
     await bot.say(left * right)
+    
+    
+@bot.command(name='IlaCru',
+                aliases=['pd', 'aya', 'mytho', 'salemerde', 'noublipas', 'tacrumdr'])
+async def IlaCru():
+    """Noublipas"""
+    await bot.say("https://media.discordapp.net/attachments/493077049251069972/500038544673472518/IMG_20180929_073327.jpg")
+    
+def user_is_me(ctx):
+    return ctx.message.author.id == "268526642530353153" 
+
+@bot.command(pass_context = True)
+@commands.check(user_is_me)
+async def say(ctx, *args):
+    mesg = ' '.join(args)
+    await bot.delete_message(ctx.message)
+    return await bot.say(mesg)
+
                  
 bot.run(TOKEN)        
-
