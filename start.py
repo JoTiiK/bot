@@ -16,22 +16,22 @@ bot = commands.Bot(command_prefix='#',description=description)
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(game=discord.Game(name='vec toi'))
+    await bot.change_presence(game=discord.Game(name='vec mon frein'))
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
     print('------')
 
-@bot.command(name='QuiEstTonMaitre',
-                aliases=['quiesttonmaitre', 'whosurmaster', 'tonmaitre', 'QuiEstLePlusBeau', 'quiestleplusbeau'])
-async def QuiEstTonMaitre():
+@bot.command(name='leplusbeau',
+                aliases=['quiesttonmaitre', 'Leplusbeau', 'Leplusbeau?', 'leplusbeau?', 'Quiesttonmaitre', 'QuiEstTonMaitre', 'QuiEstLePlusBeau', 'quiestleplusbeau', 'tonmaitre?'])
+async def leplusbeau():
     """Le soumis"""
-    await bot.say("Vous, Maitre")
+    await bot.say("Vous, Maître")
 
-@bot.command(name='Bowsette',
-                aliases=['bowsette', 'bgette', 'Bgette', 'Désirée', 'désirée', 'desiree', 'Desiree'])
-async def Bowsette():
-    """Bowsette la bgette"""
+@bot.command(name='boosette',
+                aliases=['Boosette', 'bgette', 'Bgette', 'Désirée', 'désirée', 'desiree', 'Desiree'])
+async def boosette():
+    """Boosette la démodée"""
     await bot.say("https://media.giphy.com/media/5n7rMuIpPJk4wvrzUv/giphy.gif")
 
 @bot.command()
@@ -39,14 +39,14 @@ async def add(left : float, right : float):
     """Ajoute deux nombres ensemble."""
     await bot.say(left + right)
 
-@bot.command(name='LeSac',
+@bot.command(name='lesac',
                 description="Réponds à une question par des choses ( ͡° ͜ʖ ͡° ).",
                 brief="Répond à tes questions.",
-                aliases=['eight_ball', 'eightball', '8-ball'],
+                aliases=['eightball', '8-ball', 'LeSac', 'Lesac', '8ball'],
                 pass_context=True)
-async def LeSac(context):
+async def lesac(context):
     possible_responses = [
-        "C'est un non retentissant",
+        "C'est un non *retentissant*",
         'Cela semble peu probable',
         'Difficile à dire',
         'Probable/20',
@@ -69,24 +69,25 @@ async def bitcoin():
         await bot.say("Bitcoin price is: $" + response['bpi']['USD']['rate'])
         
 @bot.command()
-async def Maxssio():
+async def maxssio():
     """*Hommage à Maxssio partit trop tot*"""
     await bot.say("YOUHOU MAX, c'est TOI ?! *dit Polo*. "
-                  " Tout le monde eut entendu et Max se fit arreter."
+                  " Tout le monde eut entendu et Max se fit arrêter."
                   " Il finira sa vie en prison, pour avoir espionné des cailloux."
                   " La Légende raconte que Max se mit à parler latin en prison, il était devenu 'tou édgi 4 u'")
     
-@bot.command()
+@bot.command(name='ぴんがす',
+                aliases=['Pingasu', 'pingasu', 'maxime', 'Maxime'])
 async def ぴんがす():
     """A jamais malade"""
     await bot.say("Ah, bah il est pas là ¯\_(ツ)_/¯ ")
     
-@bot.command(name='Dé',
+@bot.command(name='dé',
                 description="Lance un dé à 6 faces.",
                 brief="Lance un dé.",
-                aliases=['LeDé', 'dé'],
+                aliases=['LeDé', 'Dé'],
                 pass_context=True)
-async def Dé(context):
+async def dé(context):
     possible_responses = [
         "1",
         '2',
@@ -102,10 +103,6 @@ async def Dé(context):
 async def fois(left : float, right : float):
     """Multiplie deux nombres ensembles."""
     await bot.say(left * right)
-    
-    
-def user_is_me(ctx):
-    return ctx.message.author.id == "268526642530353153" 
 
 @bot.command(pass_context = True)
 @commands.check(user_is_me)
@@ -124,4 +121,4 @@ async def aya():
     return await bot.say(mesg)
 
                  
-bot.run(TOKEN)        
+bot.run(TOKEN)     
