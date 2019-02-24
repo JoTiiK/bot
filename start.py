@@ -3,6 +3,13 @@ import asyncio
 import aiohttp
 import json
 import random
+import urllib.request
+import urllib.parse
+import re
+import time
+import requests
+import io
+import urllib
 from discord import Game
 from discord.ext.commands import Bot
 from discord.ext import commands
@@ -120,5 +127,13 @@ async def aya():
     mesg = 'http://image.noelshack.com/fichiers/2016/42/1477217760-epicjesus.gif '
     return await bot.say(mesg)
 
+@bot.command()
+async def random_gif():
+  """send you random gif"""
+  data = json.loads(urllib.request.urlopen("http://api.giphy.com/v1/gifs/random?api_key=key").read())
+  dicts = data
+  dicts2 = dicts['data']
+  url = dicts2['url']
+  await bot.say(url)
                  
 bot.run(TOKEN)     
