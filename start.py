@@ -10,13 +10,13 @@ from pprint import pprint
 
 TOKEN = 'NDk4NTE2NzgyNDM3MzY3ODA4.DqFGVg.hue467MO0Y_1_4wDpgzQeV0edSE'
 
-description = '''Bot de merde'''
+description = '''Bot de qualitay'''
 bot = commands.Bot(command_prefix='#',description=description)
 
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(game=discord.Game(name='vec mes nerfs'))
+    await bot.change_presence(game=discord.Game(name='vec mon frein'))
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
@@ -49,10 +49,11 @@ async def LeSac(context):
         "C'est un non retentissant",
         'Cela semble peu probable',
         'Difficile à dire',
-        'Probable',
+        'Probable/20',
         'Définitivement',
-        'AYAAA non.',
+        'AYAAA non',
         'Demande à Anto',
+        'POST OU CANCER :smiling_imp:',
     ]
     await bot.say(random.choice(possible_responses) + ", " + context.message.author.mention)
 
